@@ -2,6 +2,9 @@
     Param(
         [string]$Resource="https://management.core.windows.net/"
     )
+    # Configure TLS 1.2 for secure connections
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    
     $ctx = Get-AzureRMContext -ErrorAction Stop
 
     $TenantId = $ctx.Tenant.TenantId

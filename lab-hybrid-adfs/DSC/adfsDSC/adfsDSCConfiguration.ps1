@@ -68,6 +68,9 @@ Configuration Main
                 $AADConnectDLUrl="https://download.microsoft.com/download/B/0/0/B00291D0-5A83-4DE7-86F5-980BC00DE05A/AzureADConnect.msi"
                 $exe="$env:SystemRoot\system32\msiexec.exe"
 
+                # Configure TLS 1.2 for secure connections
+                [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
                 $tempfile = [System.IO.Path]::GetTempFileName()
                 $folder = [System.IO.Path]::GetDirectoryName($tempfile)
 
