@@ -89,6 +89,9 @@ $deployment = New-AzureRmResourceGroupDeployment -ResourceGroupName $RGName -Tem
 if ($deployment) {
     if (-not (Get-Command Get-FQDNForVM -ErrorAction SilentlyContinue)) {
         #load add-on functions to facilitate the RDP connectoid creation below
+        # Configure TLS 1.2 for secure connections
+        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+        
         $url="$($assetLocation)Scripts/Addons.ps1"
         $tempfile = "$env:TEMP\Addons.ps1"
         $webclient = New-Object System.Net.WebClient
