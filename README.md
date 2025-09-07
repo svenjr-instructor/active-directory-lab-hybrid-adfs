@@ -89,6 +89,10 @@ if ($ctx.SubscriptionName -ne $AzureSub) { Set-AzureRmContext -SubscriptionName 
 ```
 
  
+## Git Pull Issues?
+
+If you're experiencing errors with `git pull`, see the [Git Pull Troubleshooting Guide](GIT_PULL_TROUBLESHOOTING.md) for common solutions and fixes.
+
 ## Contributing
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
